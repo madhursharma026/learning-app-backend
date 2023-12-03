@@ -27,6 +27,7 @@ export class ChaptersService {
     if (chapterFound === null) {
       let chapter: ChaptersEntity = new ChaptersEntity();
       chapter.chapterName = addchaptersArgs.chapterName;
+      chapter.chapterDescription = addchaptersArgs.chapterDescription;
       return await this.chapterRepo.save(chapter);
     } else {
       throw new ConflictException('Chapter Already Exists');
